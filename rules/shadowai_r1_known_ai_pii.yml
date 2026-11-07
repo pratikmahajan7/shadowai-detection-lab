@@ -1,0 +1,12 @@
+title: PII submitted to known unsanctioned GenAI domain
+id: shadowai-r1
+status: experimental
+description: Any PII entity in a request body sent to a domain categorised Generative AI (not sanctioned).
+logsource: {category: proxy, product: saas_egress}
+detection:
+  ai_domain:
+    domain_category: 'Generative AI'
+  pii:
+    pii.count|gte: 1
+  condition: ai_domain and pii
+level: high

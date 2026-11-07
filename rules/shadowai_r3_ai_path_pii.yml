@@ -1,0 +1,19 @@
+title: PII to any non-sanctioned endpoint with a GenAI API path
+id: shadowai-r3
+status: experimental
+description: Extends R1 past the domain list using chat/completion URL paths, catching uncategorised long-tail AI tools.
+logsource: {category: proxy, product: saas_egress}
+detection:
+  ai_path:
+    url.path|contains:
+      - '/conversation'
+      - '/chat'
+      - '/completions'
+      - '/api/generate'
+      - '/api/ask'
+  sanctioned:
+    domain_category: 'Corporate AI'
+  pii:
+    pii.strong_count|gte: 1
+  condition: ai_path and pii and not sanctioned
+level: high

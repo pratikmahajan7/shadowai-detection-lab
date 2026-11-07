@@ -1,0 +1,12 @@
+title: Strong-identifier PII to known unsanctioned GenAI domain
+id: shadowai-r2
+status: experimental
+description: As R1 but ignores NER-only types (NAME) to cut false positives.
+logsource: {category: proxy, product: saas_egress}
+detection:
+  ai_domain:
+    domain_category: 'Generative AI'
+  strong:
+    pii.strong_count|gte: 1
+  condition: ai_domain and strong
+level: high

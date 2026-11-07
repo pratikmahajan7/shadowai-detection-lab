@@ -1,0 +1,19 @@
+title: Multiple PII types to non-sanctioned GenAI-path endpoint
+id: shadowai-r4
+status: experimental
+description: Requires two or more distinct PII types; trades recall for precision.
+logsource: {category: proxy, product: saas_egress}
+detection:
+  ai_path:
+    url.path|contains:
+      - '/conversation'
+      - '/chat'
+      - '/completions'
+      - '/api/generate'
+      - '/api/ask'
+  sanctioned:
+    domain_category: 'Corporate AI'
+  multi:
+    pii.types_distinct|gte: 2
+  condition: ai_path and multi and not sanctioned
+level: medium
