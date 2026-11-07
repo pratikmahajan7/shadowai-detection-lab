@@ -64,3 +64,9 @@ def request(flow: http.HTTPFlow) -> None:
 
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+    # Lab replay traffic gets a synthetic reply, so test data never reaches real services.
+    if record["user_agent"]["original"].startswith("shadowai-replay/"):
+        flow.response = http.Response.make(
+            200, b'{"lab":"synthetic"}', {"Content-Type": "application/json"}
+        )
