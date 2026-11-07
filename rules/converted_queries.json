@@ -1,0 +1,22 @@
+{
+  "shadowai-r1": {
+    "title": "PII submitted to known unsanctioned GenAI domain",
+    "level": "high",
+    "query": "domain_category:\"Generative AI\" AND pii.count:>=1"
+  },
+  "shadowai-r2": {
+    "title": "Strong-identifier PII to known unsanctioned GenAI domain",
+    "level": "high",
+    "query": "domain_category:\"Generative AI\" AND pii.strong_count:>=1"
+  },
+  "shadowai-r3": {
+    "title": "PII to any non-sanctioned endpoint with a GenAI API path",
+    "level": "high",
+    "query": "(url.path:(*\\/conversation* OR *\\/chat* OR *\\/completions* OR *\\/api\\/generate* OR *\\/api\\/ask*)) AND pii.strong_count:>=1 AND (NOT domain_category:\"Corporate AI\")"
+  },
+  "shadowai-r4": {
+    "title": "Multiple PII types to non-sanctioned GenAI-path endpoint",
+    "level": "medium",
+    "query": "(url.path:(*\\/conversation* OR *\\/chat* OR *\\/completions* OR *\\/api\\/generate* OR *\\/api\\/ask*)) AND pii.types_distinct:>=2 AND (NOT domain_category:\"Corporate AI\")"
+  }
+}

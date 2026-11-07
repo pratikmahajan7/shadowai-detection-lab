@@ -1,5 +1,6 @@
 title: Multiple PII types to non-sanctioned GenAI-path endpoint
-id: shadowai-r4
+id: 3d5452b2-6654-4517-aeb1-f1eed86ce909
+name: shadowai-r4
 status: experimental
 description: Requires two or more distinct PII types; trades recall for precision.
 logsource: {category: proxy, product: saas_egress}

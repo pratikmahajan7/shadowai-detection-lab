@@ -1,5 +1,6 @@
 title: PII submitted to known unsanctioned GenAI domain
-id: shadowai-r1
+id: 8d75ca8b-fee2-47ab-ad3e-3a196c8f701a
+name: shadowai-r1
 status: experimental
 description: Any PII entity in a request body sent to a domain categorised Generative AI (not sanctioned).
 logsource: {category: proxy, product: saas_egress}

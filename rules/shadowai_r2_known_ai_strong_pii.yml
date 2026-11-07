@@ -1,5 +1,6 @@
 title: Strong-identifier PII to known unsanctioned GenAI domain
-id: shadowai-r2
+id: 3e95f231-aa85-4248-b470-7ea05f8758ae
+name: shadowai-r2
 status: experimental
 description: As R1 but ignores NER-only types (NAME) to cut false positives.
 logsource: {category: proxy, product: saas_egress}
