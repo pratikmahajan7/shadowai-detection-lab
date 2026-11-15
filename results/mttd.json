@@ -1,64 +1,64 @@
 {
-  "window": "now-30m",
-  "alerts": 104,
+  "window": "now-15m",
+  "alerts": 197,
   "stages": {
     "capture_to_enriched": {
-      "n": 104,
-      "median_s": 0.18,
+      "n": 197,
+      "median_s": 0.19,
       "p95_s": 0.31,
-      "max_s": 0.32,
-      "min_s": 0.02
+      "max_s": 0.36,
+      "min_s": 0.01
     },
     "enriched_to_shipped": {
-      "n": 104,
-      "median_s": 0.05,
-      "p95_s": 0.11,
-      "max_s": 0.12,
-      "min_s": 0.02
+      "n": 197,
+      "median_s": 0.21,
+      "p95_s": 0.3,
+      "max_s": 0.32,
+      "min_s": 0.0
     },
     "shipped_to_alert": {
-      "n": 104,
-      "median_s": 48.71,
-      "p95_s": 57.94,
-      "max_s": 59.54,
-      "min_s": 0.18
+      "n": 197,
+      "median_s": 30.56,
+      "p95_s": 47.54,
+      "max_s": 48.94,
+      "min_s": 9.26
     },
     "capture_to_alert": {
-      "n": 104,
-      "median_s": 48.91,
-      "p95_s": 58.3,
-      "max_s": 59.92,
-      "min_s": 0.32
+      "n": 197,
+      "median_s": 30.89,
+      "p95_s": 47.75,
+      "max_s": 49.21,
+      "min_s": 9.79
     }
   },
   "by_rule_total": {
     "shadowai-r1": {
-      "n": 21,
-      "median_s": 44.91,
-      "p95_s": 48.91,
-      "max_s": 49.3,
-      "min_s": 38.31
+      "n": 41,
+      "median_s": 30.81,
+      "p95_s": 47.8,
+      "max_s": 49.13,
+      "min_s": 9.83
     },
     "shadowai-r2": {
-      "n": 21,
-      "median_s": 47.91,
-      "p95_s": 51.9,
-      "max_s": 52.3,
-      "min_s": 41.3
+      "n": 38,
+      "median_s": 32.27,
+      "p95_s": 47.75,
+      "max_s": 49.07,
+      "min_s": 9.79
     },
     "shadowai-r3": {
-      "n": 35,
-      "median_s": 53.51,
-      "p95_s": 57.5,
-      "max_s": 58.3,
-      "min_s": 46.71
+      "n": 65,
+      "median_s": 31.56,
+      "p95_s": 47.21,
+      "max_s": 49.21,
+      "min_s": 9.91
     },
     "shadowai-r4": {
-      "n": 27,
-      "median_s": 53.71,
-      "p95_s": 59.51,
-      "max_s": 59.92,
-      "min_s": 0.32
+      "n": 53,
+      "median_s": 29.86,
+      "p95_s": 46.84,
+      "max_s": 48.5,
+      "min_s": 9.87
     }
   }
 }

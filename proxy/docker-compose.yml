@@ -10,6 +10,7 @@ services:
       --listen-port 8080
       --set confdir=/home/mitmproxy/.mitmproxy
       --set stream_large_bodies=1m
+      --set connection_strategy=lazy
     volumes:
       - ./capture.py:/addon/capture.py:ro
       - mitm-ca:/home/mitmproxy/.mitmproxy

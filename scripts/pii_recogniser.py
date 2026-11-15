@@ -28,6 +28,11 @@ BBAN_RE = re.compile(r"\b[A-Z]{4}\d{14}\b")
 ADDRESS_RE = re.compile(
     r"\b\d{1,6}\s+[A-Z][a-z]+(?:\s[A-Z][a-z]+){1,2}(?:\s(?:Apt|Suite|Unit)\.?\s\d+)?\b")
 TEN_DIGIT_RE = re.compile(r"(?<![\w.-])\d{10}(?![\w-])")
+# Reserved or placeholder values (RFC 2606 names, loopback, the 555-01xx fictional phone block)
+# cannot identify a real person, so they are not reported as PII.
+RESERVED_RE = re.compile(
+    r"(?:^|[@./])(?:example\.(?:com|org|net)|localhost)\b|\.(?:test|invalid|example)\b"
+    r"|(?:^|\D)127\.0\.0\.1|\b555-01\d\d\b", re.I)
 
 
 def luhn_ok(s: str) -> bool:
@@ -122,6 +127,7 @@ def regex_spans(text: str) -> list[Span]:
             out.append(Span(m.start(), m.end(), "ID_NUM"))
     for m in ADDRESS_RE.finditer(text):
         out.append(Span(m.start(), m.end(), "ADDRESS"))
+    out = [x for x in out if not RESERVED_RE.search(text[x.start:x.end])]
     return _dedupe(out)
 
 
