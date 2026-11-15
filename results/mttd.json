@@ -1,64 +1,64 @@
 {
-  "window": "now-15m",
-  "alerts": 197,
+  "window": "now-45m",
+  "alerts": 880,
   "stages": {
     "capture_to_enriched": {
-      "n": 197,
-      "median_s": 0.19,
-      "p95_s": 0.31,
-      "max_s": 0.36,
+      "n": 880,
+      "median_s": 0.18,
+      "p95_s": 0.32,
+      "max_s": 0.35,
       "min_s": 0.01
     },
     "enriched_to_shipped": {
-      "n": 197,
-      "median_s": 0.21,
+      "n": 880,
+      "median_s": 0.2,
       "p95_s": 0.3,
-      "max_s": 0.32,
+      "max_s": 0.34,
       "min_s": 0.0
     },
     "shipped_to_alert": {
-      "n": 197,
-      "median_s": 30.56,
-      "p95_s": 47.54,
-      "max_s": 48.94,
-      "min_s": 9.26
+      "n": 880,
+      "median_s": 32.71,
+      "p95_s": 56.48,
+      "max_s": 59.98,
+      "min_s": 0.14
     },
     "capture_to_alert": {
-      "n": 197,
-      "median_s": 30.89,
-      "p95_s": 47.75,
-      "max_s": 49.21,
-      "min_s": 9.79
+      "n": 880,
+      "median_s": 33.11,
+      "p95_s": 56.79,
+      "max_s": 60.12,
+      "min_s": 0.28
     }
   },
   "by_rule_total": {
     "shadowai-r1": {
-      "n": 41,
-      "median_s": 30.81,
-      "p95_s": 47.8,
-      "max_s": 49.13,
-      "min_s": 9.83
+      "n": 185,
+      "median_s": 32.48,
+      "p95_s": 55.3,
+      "max_s": 59.97,
+      "min_s": 0.51
     },
     "shadowai-r2": {
-      "n": 38,
-      "median_s": 32.27,
-      "p95_s": 47.75,
-      "max_s": 49.07,
-      "min_s": 9.79
+      "n": 160,
+      "median_s": 32.11,
+      "p95_s": 55.56,
+      "max_s": 59.9,
+      "min_s": 0.28
     },
     "shadowai-r3": {
-      "n": 65,
-      "median_s": 31.56,
-      "p95_s": 47.21,
-      "max_s": 49.21,
-      "min_s": 9.91
+      "n": 290,
+      "median_s": 33.67,
+      "p95_s": 57.46,
+      "max_s": 60.12,
+      "min_s": 1.07
     },
     "shadowai-r4": {
-      "n": 53,
-      "median_s": 29.86,
-      "p95_s": 46.84,
-      "max_s": 48.5,
-      "min_s": 9.87
+      "n": 245,
+      "median_s": 34.14,
+      "p95_s": 57.37,
+      "max_s": 60.07,
+      "min_s": 1.32
     }
   }
 }
